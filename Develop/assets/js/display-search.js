@@ -3,12 +3,28 @@
 function getParams() {
   // TODO: Obtain the search params from the URL and make them into an array
   
+  //https://www.loc.gov/film-and-videos/?q=dog&fo=json
+
+    var searchParams = ["maps", "audio", "photos", "manuscripts", "newspapers", "film-and-videos", "notated-music", "websites"]
 
 
   // TODO: From the array, get the query and format values
 
+    var getQuery = 'https://www.loc.gov' + user + '?q=dog&fo=json'
+
   // TODO: Invoke the searchApi function
+
+  if (searchParams) {
+    getParams(getQuery);
+
+    return getQuery;
+  } else {
+    alert('Please enter a search term');
+  }
+
 }
+
+
 
 function searchApi(query, format) {
   // TODO: Build the query URL using the provided values and the Library of Congress
